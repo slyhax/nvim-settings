@@ -24,6 +24,13 @@ if not status_keymaps then
   vim.notify("Erro ao carregar keymaps.lua", vim.log.levels.ERROR)
 end
 
+-- 🖥️ Carrega configuração do terminal
+local status_terminal, _ = pcall(require, "hax.terminal")
+if not status_terminal then
+  vim.notify("Erro ao carregar terminal.lua", vim.log.levels.ERROR)
+end
+
+
 -- 🌈 Se quiser, aqui pode carregar opções e autocmds também
 -- pcall(require, "hax.options")
 -- pcall(require, "hax.autocmds")
